@@ -1,0 +1,19 @@
+---
+- name: "Configuration for Kubernetes Cluster - Common Setup"
+  hosts: all
+  become: yes
+  gather_facts: yes
+  roles:
+    - kubernetes-common
+- name: "Configuration Kubernetes Master"
+  hosts: k8s_masters
+  become: yes
+  gather_facts: yes
+  roles:
+    - kubernetes-master
+- name: "Configuration Kubernetes Worker"
+  hosts: k8s_workers
+  become: yes
+  gather_facts: yes
+  roles:
+    - kubernetes-worker
