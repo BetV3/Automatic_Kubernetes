@@ -8,7 +8,8 @@ data "vsphere_content_library_item" "ova_template" {
 }
 module "master_node" {
   source = "../../modules/vm"
-  vm_name = var.vm_name
+  count = var.worker_count
+  vm_name = "${var.vm_name}-${count.index}"
   cpu = var.cpu
   memory = var.memory
   disk_size = var.disk_size

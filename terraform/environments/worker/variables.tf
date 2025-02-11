@@ -2,7 +2,11 @@ variable "vm_name" {
   description = "Name for the VM"
   type        = string
 }
-
+variable "worker_count" {
+  description = "Number of worker nodes"
+  type        = number
+  
+}
 variable "cpu" {
   description = "Number of CPUs for the VM"
   type        = number
