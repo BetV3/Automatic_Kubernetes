@@ -6,7 +6,7 @@ data "vsphere_content_library_item" "ova_template" {
   type = "ovf"
   library_id = data.vsphere_content_library.lib.id
 }
-module "master_node" {
+module "vm" {
   source = "../../modules/vm"
   count = var.worker_count
   vm_name = "${var.vm_name}-${count.index}"
