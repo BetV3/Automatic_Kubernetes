@@ -13,3 +13,6 @@ crash.log
 
 # Sensitive files
 terraform.tfvars
+
+# ignore all lock files
+.terraform.lock.hcl
